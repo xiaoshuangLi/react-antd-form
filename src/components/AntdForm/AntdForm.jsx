@@ -153,13 +153,13 @@ class AntdForm extends Component {
 
       return (
         <AntdFormItem
-          _error
           className="form-item"
           key={index}
           input={input}
+          onChange={() => this.onChangeItem(item)}
+          _error
           _name={name}
           _title={title}
-          onChange={() => this.onChangeItem(item)}
           {...rules}
           />
       );

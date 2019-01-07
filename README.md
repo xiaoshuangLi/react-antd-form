@@ -1,29 +1,57 @@
 # react-baby-form
 
-Easy form for react to use.
+Easy form for react to use.Base on [react-baby-form](https://github.com/xiaoshuangLi/react-baby-form) and [antd](https://github.com/ant-design/ant-design).
 
-[Demo](https://codepen.io/xiaoshuang/pen/JwLmPm)
+[Demo](https://codepen.io/xiaoshuang/pen/KboGxo)
 
-[Ant-Design Demo](https://codepen.io/xiaoshuang/pen/KboGxo)
+[react-baby-form Demo](https://codepen.io/xiaoshuang/pen/JwLmPm)
+
 
 ## Installation
 
 ```sh
-npm install --save react-baby-form
+npm install --save react-antd-form
 ```
 
 ### Usage
 
 ```jsx
 import React, { Component, createRef } from 'react';
-import BabyForm, { submit } from 'react-baby-form';
+import AntdForm, { submit } from 'react-natd-form';
 
-class Base extends Components {
+const inputs = [
+  {
+    name: 'name',
+    title: 'name',
+    rules: {
+      required: true,
+      maxLength: '32'
+    },
+  },
+  {
+    name: 'code',
+    title: 'code',
+    rules: {
+      required: true,
+      pattern: /^[0-9a-zA-Z]*$/g,
+    },
+  },
+  {
+    name: 'age',
+    title: 'age',
+    rules: {
+      min: 3,
+      max: 100,
+    },
+  },
+];
+
+class Base extends Component {
   formRef = createRef();
 
   state = {
     value: {},
-  }
+  };
 
   onChangeForm = (value) => {
     this.setState({ value });
@@ -36,39 +64,27 @@ class Base extends Components {
   }
 
   renderForm() {
-    const { value = {} } = this.state;
-
     return (
-      <Babyform value={value} onChange={this.onChangeForm}>
-        <input
-          type="text"
-          _name="name"
-          _title="name"
-          _required
-          _minLength={6}
-          _maxLength={6}
-          _pattern={/^[0-9a-zA-Z]*$/g}
-          _fn={name => name !== 'Tom'}
-          />
-        <input
-          type="number"
-          _name="age"
-          _title="age"
-          _required
-          _min={18}
-          _max={100}
-          />
-      </Babyform>
+      <AntdForm
+        value={value}
+        inputs={inputs}
+        ref={this.formRef}
+        onChange={this.onChangeForm}
+        />
     );
   }
 
   renderButton() {
     return (
-      <button onClick={this.onClickSubmit}>submit</button>
+      <Button onClick={this.onClickSubmit}>
+        submit
+      </Button>  
     );
   }
 
   render() {
+    const { value = {} } = this.state;
+
     return (
       <div>
         { this.renderForm() }
@@ -82,50 +98,27 @@ class Base extends Components {
 
 ### API
 
-#### BabyForm
+#### AntdForm
 
 ```jsx
 {
-  value: {}, // PropTypes.Object, value from BabyForm
-  warning: {}, // PropTypes.Object, warning message from BabyForm
+  value: {}, // PropTypes.Object, value from AntdForm
+  warning: {}, // PropTypes.Object, warning message from AntdForm
   Container: 'div', // PropTypes.element, The container for render.
   onChange: () => value. // PropTypes.func, Trigger when value change.
   onError: () => error. // PropTypes.func, Trigger when some children value don't pass, only return one error.
+  inputs: [], // PropTypes.Array, 
+  itemProps: {}, // PropTypes.Object, props from Form.Item base on antd-design
+  colProps: {}, // PropTypes.Object, props from Col base on antd-design
 }
 ```
 
 #### submit
 
-Validate BabyForm and return ```Promise```. Just like this:
+Validate AntdForm and return ```Promise```. Just like this:
 
 ```jsx
   ref => new Promise();
-```
-
-#### Children Props
-
-```jsx
-{
-  _ignore: false, // PropTypes.bool, ignore this node
-  _stop: false, // PropTypes.bool, stop recursive this node children
-
-  _error: false, // PropTypes.bool, save errors to props
-  errors: [], // PropTypes.Array, need set _error be true.
-
-  _name: '', // PropTypes.string, attribute in value
-  _title: '', // PropTypes.string, to show in error message
-
-  _triggerAttr: 'onChange', // PropTypes.string
-  _valueAttr: 'value', // PropTypes.string
-
-  _maxLength: undefined, // PropTypes.number
-  _minLength: undefined, // PropTypes.number
-  _max: undefined, // PropTypes.number
-  _min: undefined, // PropTypes.number
-  _required: undefined, // PropTypes.bool
-  _pattern: undefined, // RegExp
-  _fn: undefined // PropTypes.function, value => PropTypes.bool, validate it anyway you like
-}
 ```
 
 #### Default warning 
@@ -179,5 +172,35 @@ Validate BabyForm and return ```Promise```. Just like this:
   errors: [
     message: '', // from warning
   ],
+}
+```
+
+#### Input structure
+```jsx
+{
+  name: '', // PropTypes.string, to show in error message
+  title: '', // PropTypes.string, attribute in value
+  Comp: Input, // PropTypes.element, the compoent to use.
+  rules: {}, // PropTypes.Object, props just like children from 'react-baby-from'
+  compProps: {}, // PropTypes.Object, props from Comp
+  itemProps: {}, // PropTypes.Object, props from Form.Item base on antd-design
+  colProps: {}, // PropTypes.Object, props from Col base on antd-design 
+}
+```
+
+#### Rules structure
+
+```jsx
+{
+  _triggerAttr: 'onChange', // PropTypes.string
+  _valueAttr: 'value', // PropTypes.string
+
+  maxLength: undefined, // PropTypes.number
+  minLength: undefined, // PropTypes.number
+  max: undefined, // PropTypes.number
+  min: undefined, // PropTypes.number
+  required: undefined, // PropTypes.bool
+  pattern: undefined, // RegExp
+  fn: undefined // PropTypes.function, value => PropTypes.bool, validate it anyway you like
 }
 ```
