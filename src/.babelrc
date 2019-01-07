@@ -13,6 +13,14 @@
     "@babel/plugin-syntax-import-meta",
     "@babel/plugin-proposal-json-strings",
     [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      },
+      "antd"
+    ],
+    [
       "@babel/plugin-proposal-decorators",
       {
         "legacy": true

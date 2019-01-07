@@ -1,3 +1,3 @@
-export * from './components/BabyForm';
+export * from './components/AntdForm';
 
-export { default } from './components/BabyForm';
+export { default } from './components/AntdForm';

@@ -1,5 +1,5 @@
 {
-  "name": "react-baby-form",
+  "name": "react-antd-form",
   "version": "0.0.2",
   "description": "",
   "license": "MIT",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiaoshuangLi/react-baby-form"
+    "url": "https://github.com/xiaoshuangLi/react-antd-form"
   },
   "scripts": {
     "start": "npm run production",
@@ -41,9 +41,11 @@
   "author": "Xiaoshuang",
   "homepage": "http://xiaodifang.club",
   "dependencies": {
+    "antd": "^3.12.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.4.1",
+    "react-baby-form": "0.0.2",
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
