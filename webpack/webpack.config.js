@@ -22,9 +22,9 @@ module.exports = {
     publicPath: '/',
     filename: 'index.js',
     library: {
-      root: 'ReactBabyForm',
-      amd: 'ReactBabyForm',
-      commonjs: 'react-baby-form',
+      root: 'ReactAntdForm',
+      amd: 'ReactAntdForm',
+      commonjs: 'react-antd-form',
     },
     libraryTarget: 'umd',
   },
