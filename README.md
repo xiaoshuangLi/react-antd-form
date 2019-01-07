@@ -1,4 +1,4 @@
-# react-baby-form
+# react-antd-form
 
 Easy form for react to use.Base on [react-baby-form](https://github.com/xiaoshuangLi/react-baby-form) and [antd](https://github.com/ant-design/ant-design).
 
