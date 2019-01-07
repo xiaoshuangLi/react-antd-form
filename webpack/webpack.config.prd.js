@@ -6,6 +6,7 @@ var startOrEndWithList = [
   'react-dom',
   'prop-types',
   'classnames',
+  'antd',
 ];
 
 var includedList = [
