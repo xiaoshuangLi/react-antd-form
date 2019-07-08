@@ -4,6 +4,7 @@ var Visualizer = require('webpack-visualizer-plugin');
 var startOrEndWithList = [
   'react',
   'react-dom',
+  'react-baby-form',
   'prop-types',
   'classnames',
   'antd',
