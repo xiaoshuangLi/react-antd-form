@@ -1,6 +1,6 @@
 {
   "name": "react-antd-form",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
@@ -25,7 +25,7 @@
     "production:server": "better-npm-run production:server",
     "production:services": "npm-run-all --parallel production:server",
     "build": "rm -rf lib && webpack --config webpack/webpack.config.umd.js &&  webpack --config webpack/webpack.config.prd.js",
-    "prepublish": "npm run build && rm ./lib/*.html"
+    "prepublishOnly": "npm run build && rm ./lib/*.html"
   },
   "betterScripts": {
     "production:server": {
