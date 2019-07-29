@@ -97,7 +97,7 @@
     "isomorphic-fetch": "^2.2.1",
     "json-bigint": "^0.3.0",
     "jsx-loader": "^0.13.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "mathsass": "^0.10.1",
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.6.1",
