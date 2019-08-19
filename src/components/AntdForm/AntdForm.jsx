@@ -39,15 +39,9 @@ const AntdFormItem = forwardRef((props = {}, ref) => {
     className,
     input = {},
     value,
-    onChange,
     errors,
-    ...others
+    onChange: propsOnChange,
   } = props;
-
-  const cls = classnames({
-    'antd-form-item': true,
-    [className]: !!className,
-  });
 
   const {
     title: label,
@@ -58,8 +52,20 @@ const AntdFormItem = forwardRef((props = {}, ref) => {
     rules = {},
   } = input;
 
+  const { onChange: compPropsOnChange, ...others } = compProps;
+
+  const cls = classnames({
+    'antd-form-item': true,
+    [className]: !!className,
+  });
+
   const { required } = rules;
   const itemStatusProps = getItemStatusProps(errors);
+
+  const onChange = (...list) => {
+    propsOnChange && propsOnChange(...list);
+    compPropsOnChange && compPropsOnChange(...list);
+  };
 
   return (
     <Col className={cls} {...colProps}>
@@ -67,7 +73,7 @@ const AntdFormItem = forwardRef((props = {}, ref) => {
         <Comp
           value={value}
           onChange={onChange}
-          {...compProps}
+          {...others}
           />
       </Item>
     </Col>
@@ -126,7 +132,7 @@ class AntdForm extends Component {
 
     return included ? {} : {
       validateStatus: undefined,
-      help: undefined
+      help: undefined,
     };
   };
 
@@ -196,14 +202,14 @@ class AntdForm extends Component {
   }
 }
 
-const getRefErrorObj = (ref) => ([
+const getRefErrorObj = ref => ([
   {
     key: 'ref',
     value: ref,
     errors: [
       { message: 'BabyForm Ref not work' },
     ],
-  }
+  },
 ]);
 
 export const submit = (ref = {}) => {
