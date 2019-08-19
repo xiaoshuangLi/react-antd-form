@@ -10,7 +10,7 @@ const inputs = [
     title: 'name',
     rules: {
       required: true,
-      maxLength: '32'
+      maxLength: '32',
     },
   },
   {

@@ -34,16 +34,10 @@
       "import",
       {
         "libraryName": "antd",
-        "style": "css"
+        "libraryDirectory": "es",
+        "style": true
       },
       "antd"
-    ],
-    [
-      "import",
-      {
-        "libraryName": "antd-mobile",
-        "style": "css"
-      }
     ],
     "@babel/plugin-proposal-function-sent",
     "@babel/plugin-proposal-export-namespace-from",

@@ -1,6 +1,6 @@
 {
   "name": "react-antd-form",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
@@ -45,7 +45,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.4.1",
-    "react-baby-form": "~0.0.6",
+    "react-baby-form": "~0.0.7",
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
@@ -97,6 +97,8 @@
     "isomorphic-fetch": "^2.2.1",
     "json-bigint": "^0.3.0",
     "jsx-loader": "^0.13.2",
+    "less": "^3.10.1",
+    "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
     "mathsass": "^0.10.1",
     "mini-css-extract-plugin": "^0.4.3",
