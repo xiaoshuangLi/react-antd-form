@@ -1,6 +1,6 @@
 {
   "name": "react-antd-form",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
@@ -40,13 +40,17 @@
   ],
   "author": "Xiaoshuang",
   "homepage": "https://xiaoshuangli.github.io/web-just-for-fun/",
+  "peerDependencies": {
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6"
+  },
   "dependencies": {
     "antd": "^3.12.1",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
-    "react": "^16.4.1",
-    "react-baby-form": "~0.0.7",
-    "react-dom": "^16.4.1"
+    "react": "^16.8.6",
+    "react-baby-form": "^1.0.2",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

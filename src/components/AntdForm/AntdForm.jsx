@@ -9,7 +9,7 @@ const { Item } = Form;
 
 // input
 // {
-//   name: '', 
+//   name: '',
 //   title: '',
 //   Comp: 'div',
 //   rules: {}, // 验证规则
