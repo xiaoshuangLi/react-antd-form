@@ -1,6 +1,6 @@
 {
   "name": "react-antd-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "license": "MIT",
   "main": "lib/index.js",
@@ -49,7 +49,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
-    "react-baby-form": "^1.0.2",
+    "react-baby-form": "^1.0.3",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
