@@ -2,9 +2,9 @@
 
 Easy form for react to use.Base on [react-baby-form](https://github.com/xiaoshuangLi/react-baby-form) and [antd](https://github.com/ant-design/ant-design).
 
-[Demo](https://codepen.io/xiaoshuang/pen/KboGxo)
+[Demo](https://codesandbox.io/s/react-baby-form-demo-p7lvh)
 
-[react-baby-form Demo](https://codepen.io/xiaoshuang/pen/JwLmPm)
+[react-baby-form Demo](https://codesandbox.io/s/react-antd-form-7xfp6)
 
 
 ## Installation
