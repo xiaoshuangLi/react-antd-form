@@ -106,7 +106,7 @@ class Base extends Component {
   warning: {}, // PropTypes.Object, warning message from AntdForm
   Container: 'div', // PropTypes.element, The container for render.
   onChange: () => value. // PropTypes.func, Trigger when value change.
-  onError: () => error. // PropTypes.func, Trigger when some children value don't pass, only return one error.
+  onError: () => error. //  PropTypes.func, Trigger when render, return all errors or [].
   inputs: [], // PropTypes.Array, 
   itemProps: {}, // PropTypes.Object, props from Form.Item base on antd-design
   colProps: {}, // PropTypes.Object, props from Col base on antd-design
