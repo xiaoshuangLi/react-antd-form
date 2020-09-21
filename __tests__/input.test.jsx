@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AntdForm from '../src';
+import '../__mock__/matchMedia';
 
-jest.mock('component-classes');
+import AntdForm from '../src';
 
 const inputs = [
   {
@@ -17,14 +17,6 @@ const inputs = [
 ];
 
 test('show input message when did mount', () => {
-  const ClassList = require('component-classes');
-
-  ClassList.mockImplementation(() => {
-    return new Proxy({}, {
-      get: () => () => {},
-    });
-  });
-
   const testRenderer = renderer.create(
     <AntdForm dirty inputs={inputs} />
   );
@@ -41,14 +33,6 @@ test('show input message when did mount', () => {
 });
 
 test('show input message when submited', async () => {
-  const ClassList = require('component-classes');
-
-  ClassList.mockImplementation(() => {
-    return new Proxy({}, {
-      get: () => () => {},
-    });
-  });
-
   const ref = { current: null };
 
   const testRenderer = renderer.create(
@@ -79,14 +63,6 @@ test('show input message when submited', async () => {
 });
 
 test('show input message in child AntdForm when did mount', () => {
-  const ClassList = require('component-classes');
-
-  ClassList.mockImplementation(() => {
-    return new Proxy({}, {
-      get: () => () => {},
-    });
-  });
-
   const testRenderer = renderer.create(
     <AntdForm>
       <AntdForm dirty inputs={inputs} />
@@ -105,14 +81,6 @@ test('show input message in child AntdForm when did mount', () => {
 });
 
 test('show input message in child AntdForm when submited', async () => {
-  const ClassList = require('component-classes');
-
-  ClassList.mockImplementation(() => {
-    return new Proxy({}, {
-      get: () => () => {},
-    });
-  });
-
   const ref = { current: null };
 
   const testRenderer = renderer.create(

@@ -1,6 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import '../__mock__/matchMedia';
+
 import AntdForm, { submit } from '../src';
 
 const objToKey = (obj = {}, parentKeys = []) => {
