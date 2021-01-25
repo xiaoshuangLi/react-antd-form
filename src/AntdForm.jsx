@@ -26,7 +26,7 @@ const EMPTY_OBJECT = {};
 
 const defaultItemProps = {
   labelCol: { md: 4 },
-  wrapperCol: { md: 20 },
+  wrapperCol: { sm: 24, md: 20 },
 };
 
 const defaultColProps = {
