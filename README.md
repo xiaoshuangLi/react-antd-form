@@ -17,7 +17,7 @@ npm install --save react-antd-form
 
 ```jsx
 import React, { Component, createRef } from 'react';
-import AntdForm, { submit } from 'react-natd-form';
+import AntdForm, { submit } from 'react-antd-form';
 
 const inputs = [
   {
